@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>청년주택 공고 · 10/11</title>
+<meta name="description" content="서울 청년안심주택·SH·LH 모집공고 0건">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+--bg:#f4f5f7;--card:#fff;--tx:#14171c;--sub:#5f6672;--line:#e3e6ea;
+--accent:#1f5fd8;--accent-soft:#eaf1fe;--gold:#8a6100;--gold-bg:#fff8e6;
+--gold-line:#f0d089;--urgent:#c92a2a;--urgent-bg:#fff0f0;--chip:#f0f2f5;
+--radius:14px;--shadow:0 1px 2px rgba(16,24,40,.06)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#0e1013;--card:#171a1f;--tx:#e8eaed;--sub:#99a0ab;--line:#272c33;
+--accent:#6ea8ff;--accent-soft:#16233a;--gold:#f0c86a;--gold-bg:#2a2212;
+--gold-line:#5c4a1e;--urgent:#ff8787;--urgent-bg:#331a1a;--chip:#232830;
+--shadow:none}}
+:root[data-theme="dark"]{--bg:#0e1013;--card:#171a1f;--tx:#e8eaed;
+--sub:#99a0ab;--line:#272c33;--accent:#6ea8ff;--accent-soft:#16233a;
+--gold:#f0c86a;--gold-bg:#2a2212;--gold-line:#5c4a1e;--urgent:#ff8787;
+--urgent-bg:#331a1a;--chip:#232830;--shadow:none}
+
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font-size:16px;
+line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,
+"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+padding:0 0 calc(40px + env(safe-area-inset-bottom))}
+.wrap{max-width:560px;margin:0 auto;padding:0 14px}
+
+header{padding:18px 0 10px}
+h1{font-size:19px;margin:0 0 3px;letter-spacing:-.02em;font-weight:700}
+.sub{color:var(--sub);font-size:13px;margin:0}
+.stats{display:flex;gap:7px;margin-top:12px}
+.stats div{flex:1;background:var(--card);border:1px solid var(--line);
+border-radius:11px;padding:9px 11px;font-size:12px;color:var(--sub);
+box-shadow:var(--shadow)}
+.stats b{display:block;font-size:18px;color:var(--tx);line-height:1.25;
+font-weight:700}
+.stats .hi b{color:var(--gold)}
+.stats .ur b{color:var(--urgent)}
+
+.filters{position:sticky;top:0;z-index:5;display:flex;gap:6px;
+padding:10px 0;margin:0 -14px;padding-left:14px;padding-right:14px;
+overflow-x:auto;background:var(--bg);scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+.filters::-webkit-scrollbar{display:none}
+.f{flex:0 0 auto;min-height:38px;padding:0 15px;border-radius:999px;
+border:1px solid var(--line);background:var(--card);color:var(--sub);
+font-size:13.5px;font-family:inherit;cursor:pointer;white-space:nowrap}
+.f.on{background:var(--accent);border-color:var(--accent);color:#fff;
+font-weight:600}
+
+.day{display:flex;align-items:center;gap:7px;font-size:13px;
+color:var(--sub);font-weight:700;margin:22px 0 9px}
+.day .wd{font-weight:500}
+.dayn{margin-left:auto;font-weight:500;font-size:12px}
+.daycount{background:var(--gold-bg);color:var(--gold);
+border:1px solid var(--gold-line);border-radius:6px;padding:1px 7px;
+font-size:11.5px;margin-left:0}
+
+.list{display:flex;flex-direction:column;gap:9px}
+.card{display:block;background:var(--card);border:1px solid var(--line);
+border-radius:var(--radius);padding:14px;text-decoration:none;color:inherit;
+box-shadow:var(--shadow);-webkit-tap-highlight-color:transparent}
+.card:active{transform:scale(.993)}
+.card.t1{background:var(--gold-bg);border-color:var(--gold-line);
+border-left:4px solid var(--gold)}
+.card.closed{opacity:.5}
+
+.top{display:flex;align-items:center;gap:6px;margin-bottom:7px;
+font-size:12px}
+.star{color:var(--gold);font-size:13px;line-height:1}
+.place{font-weight:700;color:var(--accent)}
+.card.t1 .place{color:var(--gold)}
+.src{margin-left:auto;color:var(--sub);font-size:11.5px}
+
+.card h3{font-size:15.5px;margin:0 0 10px;font-weight:600;line-height:1.4;
+letter-spacing:-.01em;word-break:keep-all}
+
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px}
+.chip{font-size:12px;background:var(--chip);color:var(--sub);
+border-radius:6px;padding:3px 9px;white-space:nowrap}
+.chip.due{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.chip.urgent{background:var(--urgent-bg);color:var(--urgent);font-weight:700}
+.chip.done{background:var(--chip);color:var(--sub)}
+
+.meta{border-top:1px solid var(--line);padding-top:9px;display:flex;
+flex-direction:column;gap:4px}
+.card.t1 .meta{border-top-color:var(--gold-line)}
+.row{display:flex;gap:10px;font-size:13px;align-items:baseline}
+.row .k{color:var(--sub);flex:0 0 52px}
+.row .v{font-weight:500;flex:1;min-width:0;word-break:keep-all;
+overflow-wrap:anywhere;line-height:1.5}
+.row.sub .v{font-weight:400}
+.row.none{color:var(--sub);font-size:12.5px}
+
+.empty{text-align:center;padding:52px 20px;background:var(--card);
+border:1px solid var(--line);border-radius:var(--radius);margin-top:16px}
+.empty .emoji{font-size:34px;margin-bottom:10px}
+.empty p{margin:4px 0;font-size:14.5px}
+.muted{color:var(--sub);font-size:13px}
+.nohit{display:none;text-align:center;color:var(--sub);font-size:14px;
+padding:36px 0}
+
+footer{margin-top:30px;padding-top:15px;border-top:1px solid var(--line);
+color:var(--sub);font-size:12px;line-height:1.7}
+footer a{color:var(--accent)}
+
+@media(min-width:620px){
+body{font-size:15px}
+.wrap{padding:0 20px}
+h1{font-size:22px}
+.card h3{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>청년주택 공고</h1>
+<p class="sub">10/09 ~ 10/11 게시분 · 서울 · 경기 · 인천</p>
+<div class="stats">
+<div><b>0</b>전체</div>
+<div class="hi"><b>0</b>★ 추천 지역</div>
+<div class="ur"><b>0</b>마감 임박</div>
+</div>
+</header>
+
+<div class="empty">
+<div class="emoji">📭</div>
+<p><strong>새로 올라온 공고가 없습니다</strong></p>
+<p class="muted">이 기간에는 조건에 맞는 모집공고가 없었습니다.</p>
+</div>
+<div class="nohit">조건에 맞는 공고가 없습니다.</div>
+<footer>
+★ 표시는 강동·송파·광진·강남·동대문·성동 지역입니다.<br>
+2026년 10월 11일 14:57 기준 · 자동 수집<br>
+출처 <a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/list.do?menuNo=400008" target="_blank" rel="noopener">청년안심주택</a> ·
+<a href="https://housing.seoul.go.kr/site/main/sh/publicLease/list" target="_blank" rel="noopener">서울주거포털</a><br>
+접수 일정은 변경될 수 있으니 반드시 원문 공고를 확인하세요.
+</footer>
+</div>
+<script>
+(function(){
+var chips=document.querySelectorAll('.f');
+var cards=document.querySelectorAll('.card');
+var nohit=document.querySelector('.nohit');
+function apply(f){
+  cards.forEach(function(c){
+    var ok = f==='all'
+      || (f==='t1' && c.dataset.tier==='1')
+      || (f==='urgent' && c.querySelector('.chip.urgent'))
+      || (f==='open' && !c.classList.contains('closed'));
+    c.style.display = ok ? '' : 'none';
+  });
+  var total=0;
+  document.querySelectorAll('.day').forEach(function(h){
+    var list=h.nextElementSibling, n=0;
+    if(list) list.querySelectorAll('.card').forEach(function(c){
+      if(c.style.display!=='none') n++;
+    });
+    total+=n;
+    h.style.display = n ? '' : 'none';
+    if(list) list.style.display = n ? '' : 'none';
+  });
+  if(nohit) nohit.style.display = total ? 'none' : 'block';
+}
+chips.forEach(function(b){
+  b.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    apply(b.dataset.f);
+  });
+});
+})();
+</script>
+</body>
+</html>
