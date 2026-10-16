@@ -6,23 +6,26 @@
 viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <title>청년주택 공고 · 10/16</title>
-<meta name="description" content="서울 청년안심주택·SH·LH 모집공고 2건">
+<meta name="description" content="서울 청년안심주택·SH·LH 모집공고 10건">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
 --bg:#f4f5f7;--card:#fff;--tx:#14171c;--sub:#5f6672;--line:#e3e6ea;
 --accent:#1f5fd8;--accent-soft:#eaf1fe;--gold:#8a6100;--gold-bg:#fff8e6;
 --gold-line:#f0d089;--urgent:#c92a2a;--urgent-bg:#fff0f0;--chip:#f0f2f5;
+--soon:#0b6b58;--soon-bg:#e6f6f1;--soon-line:#9bd9c7;
 --radius:14px;--shadow:0 1px 2px rgba(16,24,40,.06)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
 --bg:#0e1013;--card:#171a1f;--tx:#e8eaed;--sub:#99a0ab;--line:#272c33;
 --accent:#6ea8ff;--accent-soft:#16233a;--gold:#f0c86a;--gold-bg:#2a2212;
 --gold-line:#5c4a1e;--urgent:#ff8787;--urgent-bg:#331a1a;--chip:#232830;
+--soon:#5fd3b2;--soon-bg:#102923;--soon-line:#2b5f52;
 --shadow:none}}
 :root[data-theme="dark"]{--bg:#0e1013;--card:#171a1f;--tx:#e8eaed;
 --sub:#99a0ab;--line:#272c33;--accent:#6ea8ff;--accent-soft:#16233a;
 --gold:#f0c86a;--gold-bg:#2a2212;--gold-line:#5c4a1e;--urgent:#ff8787;
---urgent-bg:#331a1a;--chip:#232830;--shadow:none}
+--urgent-bg:#331a1a;--chip:#232830;
+--soon:#5fd3b2;--soon-bg:#102923;--soon-line:#2b5f52;--shadow:none}
 
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--tx);font-size:16px;
@@ -34,14 +37,15 @@ padding:0 0 calc(40px + env(safe-area-inset-bottom))}
 header{padding:18px 0 10px}
 h1{font-size:19px;margin:0 0 3px;letter-spacing:-.02em;font-weight:700}
 .sub{color:var(--sub);font-size:13px;margin:0}
-.stats{display:flex;gap:7px;margin-top:12px}
-.stats div{flex:1;background:var(--card);border:1px solid var(--line);
+.stats{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.stats div{flex:1 1 calc(50% - 4px);background:var(--card);border:1px solid var(--line);
 border-radius:11px;padding:9px 11px;font-size:12px;color:var(--sub);
 box-shadow:var(--shadow)}
 .stats b{display:block;font-size:18px;color:var(--tx);line-height:1.25;
 font-weight:700}
 .stats .hi b{color:var(--gold)}
 .stats .ur b{color:var(--urgent)}
+.stats .so b{color:var(--soon)}
 
 .filters{position:sticky;top:0;z-index:5;display:flex;gap:6px;
 padding:10px 0;margin:0 -14px;padding-left:14px;padding-right:14px;
@@ -91,6 +95,11 @@ border-radius:6px;padding:3px 9px;white-space:nowrap}
 .chip.due{background:var(--accent-soft);color:var(--accent);font-weight:600}
 .chip.urgent{background:var(--urgent-bg);color:var(--urgent);font-weight:700}
 .chip.done{background:var(--chip);color:var(--sub)}
+/* 접수 예정 — 지금 넣는 게 아니라는 뜻이므로 마감 칩과 색을 다르게 */
+.chip.soon{background:var(--soon-bg);color:var(--soon);font-weight:700;
+border:1px solid var(--soon-line)}
+/* 접수창이 1~2일뿐인 공고 */
+.chip.tight{background:var(--urgent-bg);color:var(--urgent);font-weight:700}
 
 .meta{border-top:1px solid var(--line);padding-top:9px;display:flex;
 flex-direction:column;gap:4px}
@@ -134,33 +143,100 @@ h1{font-size:22px}
 <div class="wrap">
 <header>
 <h1>청년주택 공고</h1>
-<p class="sub">10/16 기준 접수 중인 공고 · 서울 · 경기 · 인천</p>
+<p class="sub">10/16 기준 접수 중·예정 공고 · 서울 · 경기 · 인천</p>
 <div class="stats">
-<div><b>2</b>전체</div>
-<div class="hi"><b>1</b>★ 추천 지역</div>
+<div><b>10</b>전체</div>
+<div class="hi"><b>3</b>★ 추천 지역</div>
 <div class="ur"><b>0</b>마감 임박</div>
+<div class="so"><b>6</b>접수 예정</div>
 </div>
 </header>
-<div class="filters"><button class="f on" data-f="all">전체 2</button><button class="f" data-f="t1">★ 추천 지역 1</button></div>
-<h2 class="day">이번 주 <span class="wd">(D-2 ~ D-7)</span><span class="dayn">1건</span></h2><div class="list"><article class="card"
-data-tier="2" data-source="청년안심주택">
+<div class="filters"><button class="f on" data-f="all">전체 10</button><button class="f" data-f="t1">★ 추천 지역 3</button><button class="f" data-f="soon">접수 예정 6</button></div>
+<h2 class="day">접수 예정 <span class="wd">(곧 시작 — 서류를 미리 준비하세요)</span><span class="dayn">6건</span><span class="daycount">★ 2</span></h2><div class="list"><article class="card t1"
+data-tier="1" data-source="청년안심주택"
+data-soon="1">
+<div class="top"><span class="star">★</span><span class="place">강동구</span>
+<span class="src">청년안심주택</span></div>
+<h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6702&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">길동역 길동생활(B동) 추가모집공고</a></h3>
+<div class="chips"><span class="chip">민간·추가</span><span class="chip soon">D+3 접수 시작</span><span class="chip tight">접수 2일뿐</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/19 ~ 10/20</span></div><div class="row"><span class="k">마감</span><span class="v">10월 20일 (화)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울특별시 강동구 길동 368-7 (5호선 길동역 1번 출구)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%8F%99%EA%B5%AC%20%EA%B8%B8%EB%8F%99%20368-7" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 270세대 중 금회 추가모집 공공지원민간임대 7세대 (특별공급 1세대, 일반공급 6세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
+</article><article class="card t1"
+data-tier="1" data-source="청년안심주택"
+data-soon="1">
+<div class="top"><span class="star">★</span><span class="place">강동구</span>
+<span class="src">청년안심주택</span></div>
+<h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6701&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">길동역 길동생활(A동) 추가모집공고</a></h3>
+<div class="chips"><span class="chip">민간·추가</span><span class="chip soon">D+3 접수 시작</span><span class="chip tight">접수 2일뿐</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/19 ~ 10/20</span></div><div class="row"><span class="k">마감</span><span class="v">10월 20일 (화)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울특별시 강동구 길동 367-1 (5호선 길동역 1번 출구)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%8F%99%EA%B5%AC%20%EA%B8%B8%EB%8F%99%20367-1" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 297세대 중 금회 추가모집 공공지원민간임대 7세대 (특별공급 1세대, 일반공급 6세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
+</article><article class="card"
+data-tier="2" data-source="청년안심주택"
+data-soon="1">
+<div class="top"><span class="place">중랑구</span>
+<span class="src">청년안심주택</span></div>
+<h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6697&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">상봉역 상봉생활 추가모집공고</a></h3>
+<div class="chips"><span class="chip">민간·추가</span><span class="chip soon">D+2 접수 시작</span><span class="chip tight">접수 2일뿐</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/18 ~ 10/19</span></div><div class="row"><span class="k">마감</span><span class="v">10월 19일 (월)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울특별시 중랑구 상봉동 116-49번지 (7호선, 경의중앙선 상봉역 6번 출구)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EB%9E%91%EA%B5%AC%20%EC%83%81%EB%B4%89%EB%8F%99%20116-49%EB%B2%88%EC%A7%80" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 299세대 중 금회 추가모집 공공지원민간임대 25세대 (일반공급 25세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
+</article><article class="card"
+data-tier="2" data-source="청년안심주택"
+data-soon="1">
+<div class="top"><span class="place">성북구</span>
+<span class="src">청년안심주택</span></div>
+<h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6699&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">종암경찰서역(예정) 라온프라이빗 종암 추가모집공고</a></h3>
+<div class="chips"><span class="chip">민간·추가</span><span class="chip soon">D+3 접수 시작</span><span class="chip tight">접수 1일뿐</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/19 당일</span></div><div class="row"><span class="k">마감</span><span class="v">10월 19일 (월)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울특별시 성북구 종암동 83-3 일원 (동북선 종암경찰서역)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%EC%A2%85%EC%95%94%EB%8F%99%2083-3%20%EC%9D%BC%EC%9B%90" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 290세대 중 금회 추가모집 공공지원민간임대 2세대 (일반공급 2세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
+</article><article class="card"
+data-tier="2" data-source="청년안심주택"
+data-soon="1">
+<div class="top"><span class="place">서대문구</span>
+<span class="src">청년안심주택</span></div>
+<h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6698&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">가좌역 스타타워 입주자 추가모집공고</a></h3>
+<div class="chips"><span class="chip">민간·추가</span><span class="chip soon">D+3 접수 시작</span><span class="chip tight">접수 2일뿐</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/19 ~ 10/20</span></div><div class="row"><span class="k">마감</span><span class="v">10월 20일 (화)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울시 서대문구 남가좌동 269-1 (경의중앙선 &amp; 경의선 가좌역 3번 출구)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%20%EB%82%A8%EA%B0%80%EC%A2%8C%EB%8F%99%20269-1" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 109세대 중 금회 추가모집 공공지원민간임대 6세대 (특별공급 3세대, 일반공급 3세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
+</article><article class="card"
+data-tier="2" data-source="청년안심주택"
+data-soon="1">
+<div class="top"><span class="place">중구</span>
+<span class="src">청년안심주택</span></div>
+<h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6696&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">동대문역사문화공원역 166타워 추가모집공고</a></h3>
+<div class="chips"><span class="chip">민간·추가</span><span class="chip soon">D+5 접수 시작</span><span class="chip tight">접수 2일뿐</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/21 ~ 10/22</span></div><div class="row"><span class="k">마감</span><span class="v">10월 22일 (목)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울특별시 중구 광희동1가 166외 7필지 (2,4,5호선 동대문역사문화공원역 5번 출구)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EA%B4%91%ED%9D%AC%EB%8F%991%EA%B0%80%20166%EC%99%B8%207%ED%95%84%EC%A7%80" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 84세대 중 금회 추가공급 공공지원민간임대 1세대 (일반공급 1세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
+</article></div><h2 class="day">이번 주 <span class="wd">(D-2 ~ D-7)</span><span class="dayn">1건</span></h2><div class="list"><article class="card"
+data-tier="2" data-source="청년안심주택"
+data-soon="0">
 <div class="top"><span class="place">강서구</span>
 <span class="src">청년안심주택</span></div>
 <h3><a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/view.do?boardId=6700&amp;menuNo=400008&amp;optn1=2026-10-15" target="_blank" rel="noopener">화곡역 포르투나블루 추가모집공고</a></h3>
 <div class="chips"><span class="chip">민간·추가</span><span class="chip due">D-3</span></div>
 <div class="meta"><div class="row"><span class="k">접수</span><span class="v">10/16 ~ 10/19</span></div><div class="row"><span class="k">마감</span><span class="v">10월 19일 (월)</span></div><div class="row sub"><span class="k">주택위치</span><span class="v">서울특별시 강서구 화곡로 146(5호선 화곡역 6번 출구)</span></div><div class="row sub"><span class="k"></span><span class="v"><a class="mapbtn" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EC%84%9C%EA%B5%AC%20%ED%99%94%EA%B3%A1%EB%A1%9C%20146" target="_blank" rel="noopener">📍 지도보기</a></span></div><div class="row sub"><span class="k">공급호수</span><span class="v">총 67세대 중 금회 추가모집 공공지원민간임대 1세대 (일반공급 1세대)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 15일 (목)</span></div></div>
-</article></div><h2 class="day">마감일 미정 <span class="wd">(공고문 확인)</span><span class="dayn">1건</span><span class="daycount">★ 1</span></h2><div class="list"><article class="card t1"
-data-tier="1" data-source="SH">
+</article></div><h2 class="day">2주 이내 <span class="wd">(D-8 ~ D-14)</span><span class="dayn">1건</span></h2><div class="list"><article class="card"
+data-tier="3" data-source="LH"
+data-soon="0">
+<div class="top"><span class="place">경기도</span>
+<span class="src">LH 한국토지주택공사</span></div>
+<h3><a href="https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020900&amp;ccrCnntSysDsCd=03&amp;uppAisTpCd=13&amp;aisTpCd=26&amp;mi=1026" target="_blank" rel="noopener">[경기북부] 청년 매입임대주택 선착순 예비입주자 모집공고 (김포시, 포천시)</a></h3>
+<div class="chips"><span class="chip">매입임대</span><span class="chip due">D-13</span></div>
+<div class="meta"><div class="row"><span class="k">접수</span><span class="v">~ 10/29</span></div><div class="row"><span class="k">마감</span><span class="v">10월 29일 (목)</span></div><div class="row sub"><span class="k">게시일</span><span class="v">10월 16일 (금)</span></div></div>
+</article></div><h2 class="day">마감일 미정 <span class="wd">(공고문 확인)</span><span class="dayn">2건</span><span class="daycount">★ 1</span></h2><div class="list"><article class="card t1"
+data-tier="1" data-source="SH"
+data-soon="0">
 <div class="top"><span class="star">★</span><span class="place">강동구</span>
 <span class="src">SH 서울주택도시공사</span></div>
 <h3><a href="https://www.i-sh.co.kr/main/lay2/program/S1T294C295/www/brd/m_241/view.do?seq=311087" target="_blank" rel="noopener">강동구 청년창업가,예술인주택(수요자맞춤형) 잔여세대 모집 공고</a></h3>
 <div class="chips"><span class="chip">수요자맞춤형</span></div>
 <div class="meta"><div class="row none">접수 일정은 공고문에서 확인하세요</div><div class="row sub"><span class="k">게시일</span><span class="v">10월 8일 (목)</span></div></div>
+</article><article class="card"
+data-tier="2" data-source="SH"
+data-soon="0">
+<div class="top"><span class="place">서초구</span>
+<span class="src">SH 서울주택도시공사</span></div>
+<h3><a href="https://www.i-sh.co.kr/main/lay2/program/S1T294C295/www/brd/m_241/view.do?seq=311521" target="_blank" rel="noopener">서초구 청년예술인주택 서리풀 청년아트타운(수요자맞춤형) 잔여세대 모집 공고</a></h3>
+<div class="chips"><span class="chip">수요자맞춤형</span></div>
+<div class="meta"><div class="row none">접수 일정은 공고문에서 확인하세요</div><div class="row sub"><span class="k">게시일</span><span class="v">10월 16일 (금)</span></div></div>
 </article></div>
 <div class="nohit">조건에 맞는 공고가 없습니다.</div>
 <footer>
 ★ 표시는 강동·송파·광진·강남·동대문·성동 지역입니다.<br>
-2026년 10월 16일 15:10 기준 · 자동 수집<br>
+2026년 10월 17일 02:58 기준 · 자동 수집<br>
 출처 <a href="https://soco.seoul.go.kr/youth/bbs/BMSR00015/list.do?menuNo=400008" target="_blank" rel="noopener">청년안심주택</a> ·
 <a href="https://housing.seoul.go.kr/site/main/sh/publicLease/list" target="_blank" rel="noopener">서울주거포털</a><br>
 접수 일정은 변경될 수 있으니 반드시 원문 공고를 확인하세요.
@@ -176,6 +252,7 @@ function apply(f){
     var ok = f==='all'
       || (f==='t1' && c.dataset.tier==='1')
       || (f==='urgent' && c.querySelector('.chip.urgent'))
+      || (f==='soon' && c.dataset.soon==='1')
       || (f==='open' && !c.classList.contains('closed'));
     c.style.display = ok ? '' : 'none';
   });
